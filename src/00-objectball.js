@@ -118,15 +118,6 @@ const gameObject = () => {
 
 // trying to break the object up into individual functions to better traverse the data
 
-const playerStats = (player) => {
-  const game = gameObject()
-  if (game.home.players[player] === player){
-    return game.home.players[player]
-  } else {
-    return game.away.players[player]
-  }
-}
-
 const findTeam = (team) => {
   const game = gameObject()
   if (game.home.teamName === team){
@@ -138,10 +129,20 @@ const findTeam = (team) => {
 
 console.log(findTeam("Brooklyn Nets"))
 
-
-//using functions above to better traverse the game object
+const playerStats = (player) => {
+  
+  const game = gameObject()
+  if (game.home.players[player] === player){
+    return game.home.players[player]
+  } else {
+    return game.away.players[player]
+  }
+}
 
 console.log(playerStats('Ben Gordon'))
+
+
+//using functions above to better traverse the game object
 
 const numPointsScored = (player) => {
   return playerStats(player).points
@@ -157,28 +158,16 @@ const showSize = (player) => {
 console.log(showSize('Ben Gordon'))
 
 const teamColors = (team) => {
-  const game = gameObject()
+  return findTeam(team).colors
 }
 
+console.log(teamColors("Brooklyn Nets"))
+
+const teamNames = () => [gameObject().home.teamName, gameObject().away.teamName]
+
+  console.log(teamNames())
+
 //old solutions 
-
-// const teamColors = (team) => {
-//   const game = gameObject()
-//   if (game.home.teamName === team){
-//     return game.home.colors
-//   } else {
-//     return game.away.colors
-//   }
-// }
-
-// console.log(teamColors("Brooklyn Nets"))
-
-// const teamNames = () => {
-//   const game = gameObject()
-//   return [game.home.teamName, game.away.teamName]
-// }
-
-// console.log(teamNames())
 
 // const playerNumbers = (team) => {
 //   const game = gameObject()

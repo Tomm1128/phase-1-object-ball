@@ -149,7 +149,7 @@ const teamColors = (team) => {
   }
 }
 
-console.log(teamColors("Brooklyn Net"))
+console.log(teamColors("Brooklyn Nets"))
 
 const teamNames = () => {
   const game = gameObject()
@@ -157,3 +157,21 @@ const teamNames = () => {
 }
 
 console.log(teamNames())
+
+const playerNumbers = (team) => {
+  const game = gameObject()
+  const jerseyNumbers = []
+  if (game.home.teamName === team){
+    for (const key in game.home.players){
+      jerseyNumbers.push(game.home.players[key].number)
+    }
+  } else {
+    for (const key in game.away.players){
+      jerseyNumbers.push(game.away.players[key].number)
+    }
+  }
+  return jerseyNumbers
+}
+
+console.log(playerNumbers("Brooklyn Nets"))
+

@@ -116,10 +116,11 @@ const gameObject = () => {
   return basketballGame
 }
 
+const game = gameObject()
+
 // trying to break the object up into individual functions to better traverse the data
 
 const findTeam = (team) => {
-  const game = gameObject()
   if (game.home.teamName === team){
     return game.home
   } else {
@@ -130,8 +131,6 @@ const findTeam = (team) => {
 //console.log(findTeam("Brooklyn Nets"))
 
 const playerStats = (player) => {
-  
-  const game = gameObject()
   if (game.home.players[player] === player){
     return game.home.players[player]
   } else {
@@ -141,6 +140,9 @@ const playerStats = (player) => {
 
 //console.log(playerStats('Ben Gordon'))
 
+// const findPlayersOnTeam = (team) => {
+//   if (game)
+// }
 
 //using functions above to better traverse the game object
 

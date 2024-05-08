@@ -175,3 +175,13 @@ const playerNumbers = (team) => {
 
 console.log(playerNumbers("Brooklyn Nets"))
 
+const playerStats = (player) => {
+  const game = gameObject()
+  if (game.home.players[player] === player){
+    return game.home.players[player]
+  } else {
+    return game.away.players[player]
+  }
+}
+
+console.log(playerStats('Ben Gordon'))

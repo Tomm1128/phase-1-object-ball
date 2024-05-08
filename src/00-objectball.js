@@ -116,64 +116,7 @@ const gameObject = () => {
   return basketballGame
 }
 
-const numPointsScored = (player) => {
-  const game = gameObject()
-
-  if (game.home.players[player] === player){
-    return game.home.players[player].points
-  } else {
-    return game.away.players[player].points
-  }
-}
-
-numPointsScored('Ben Gordon');
-
-const showSize = (player) => {
-  const game = gameObject()
-
-  if (game.home.players[player] === player){
-    return game.home.players[player].shoe
-  } else {
-    return game.away.players[player].shoe
-  }
-}
-
-console.log(showSize('Ben Gordon'))
-
-const teamColors = (team) => {
-  const game = gameObject()
-  if (game.home.teamName === team){
-    return game.home.colors
-  } else {
-    return game.away.colors
-  }
-}
-
-console.log(teamColors("Brooklyn Nets"))
-
-const teamNames = () => {
-  const game = gameObject()
-  return [game.home.teamName, game.away.teamName]
-}
-
-console.log(teamNames())
-
-const playerNumbers = (team) => {
-  const game = gameObject()
-  const jerseyNumbers = []
-  if (game.home.teamName === team){
-    for (const key in game.home.players){
-      jerseyNumbers.push(game.home.players[key].number)
-    }
-  } else {
-    for (const key in game.away.players){
-      jerseyNumbers.push(game.away.players[key].number)
-    }
-  }
-  return jerseyNumbers
-}
-
-console.log(playerNumbers("Brooklyn Nets"))
+// trying to break the object up into individual functions to better traverse the data
 
 const playerStats = (player) => {
   const game = gameObject()
@@ -185,3 +128,75 @@ const playerStats = (player) => {
 }
 
 console.log(playerStats('Ben Gordon'))
+
+const numPointsScored = (player) => {
+  return playerStats(player).points
+  
+}
+
+console.log(numPointsScored('Ben Gordon'));
+
+const showSize = (player) => {
+  return playerStats(player).shoe
+}
+
+console.log(showSize('Ben Gordon'))
+
+//old solutions 
+
+// const showSize = (player) => {
+//   const game = gameObject()
+
+//   if (game.home.players[player] === player){
+//     return game.home.players[player].shoe
+//   } else {
+//     return game.away.players[player].shoe
+//   }
+// }
+
+// const teamColors = (team) => {
+//   const game = gameObject()
+//   if (game.home.teamName === team){
+//     return game.home.colors
+//   } else {
+//     return game.away.colors
+//   }
+// }
+
+// console.log(teamColors("Brooklyn Nets"))
+
+// const teamNames = () => {
+//   const game = gameObject()
+//   return [game.home.teamName, game.away.teamName]
+// }
+
+// console.log(teamNames())
+
+// const playerNumbers = (team) => {
+//   const game = gameObject()
+//   const jerseyNumbers = []
+//   if (game.home.teamName === team){
+//     for (const key in game.home.players){
+//       jerseyNumbers.push(game.home.players[key].number)
+//     }
+//   } else {
+//     for (const key in game.away.players){
+//       jerseyNumbers.push(game.away.players[key].number)
+//     }
+//   }
+//   return jerseyNumbers
+// }
+
+// console.log(playerNumbers("Brooklyn Nets"))
+
+
+// const findShoeSizes = () => {
+//   const game = gameObject()
+
+// }
+
+// const bigShoeRebounds = () => {
+//   const game = gameObject()
+//   let shoeCheck = 0
+  
+// }

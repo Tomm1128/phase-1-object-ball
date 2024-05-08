@@ -128,4 +128,14 @@ const numPointsScored = (player) => {
 
 numPointsScored('Ben Gordon');
 
+const showSize = (player) => {
+  const game = gameObject()
 
+  if (game.home.players[player] === player){
+    return game.home.players[player].shoe
+  } else {
+    return game.away.players[player].shoe
+  }
+}
+
+console.log(showSize('Ben Gordon'))

@@ -140,9 +140,11 @@ const playerStats = (player) => {
 
 //console.log(playerStats('Ben Gordon'))
 
-// const findPlayersOnTeam = (team) => {
-//   if (game)
-// }
+const findPlayersOnTeam = (team) => {
+  return findTeam(team).players
+}
+
+//console.log(findPlayersOnTeam("Brooklyn Nets"))
 
 //using functions above to better traverse the game object
 
@@ -163,21 +165,15 @@ const teamNames = () => [gameObject().home.teamName, gameObject().away.teamName]
 //console.log(teamNames())
 
 const playerNumbers = (team) => {
-  const workingTeam = findTeam(team)
   const jerseyNumbers = []
-  if (workingTeam.teamName === team){
-    for (const key in workingTeam.players){
-      jerseyNumbers.push(workingTeam.players[key].number)
-    } 
-  } else {
-    for (const key in workingTeam.players){
-      jerseyNumbers.push(workingTeam.players[key].number)
-    }
-  }
+  const teamPlayers = findPlayersOnTeam(team)
+  for (const key in teamPlayers){
+    jerseyNumbers.push(teamPlayers[key].number)
+  } 
   return jerseyNumbers
 }
 
-//console.log(playerNumbers("Brooklyn Nets"))
+console.log(playerNumbers("Brooklyn Nets"))
 
 
 

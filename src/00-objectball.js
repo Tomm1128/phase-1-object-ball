@@ -4,7 +4,7 @@ const gameObject = () => {
       teamName: "Brooklyn Nets",
       colors: ["Black", "White"],
       players: {
-        alanAnderson:{
+        "Alan Anderson":{
           number: 0,
           shoe: 16,
           points: 22,
@@ -14,7 +14,7 @@ const gameObject = () => {
           blocks: 1,
           slamDunks: 1,
         },
-        reggiesEvans:{
+        "Reggie Evans":{
           number: 30,
           shoe: 14,
           points: 12,
@@ -24,7 +24,7 @@ const gameObject = () => {
           blocks: 12,
           slamDunks: 7,
         },
-        brookLopez:{
+        "Brook Lopez":{
           number: 11,
           shoe: 17,
           points: 17,
@@ -34,7 +34,7 @@ const gameObject = () => {
           blocks: 1,
           slamDunks: 15,
         },
-        masonPlumlee:{
+        "Mason Plumlee":{
           number: 1,
           shoe: 19,
           points: 26,
@@ -44,7 +44,7 @@ const gameObject = () => {
           blocks: 8,
           slamDunks: 5,
         },
-        jasonTerry:{
+        "Jason Terry":{
           number: 31,
           shoe: 15,
           points: 19,
@@ -60,7 +60,7 @@ const gameObject = () => {
       teamName: "Carlotte Hornets",
       colors: ["Turquoise", "Purple"],
       players: {
-        jeffAdrien:{
+        "Jeff Adrien":{
           number: 4,
           shoe: 18,
           points: 10,
@@ -70,7 +70,7 @@ const gameObject = () => {
           blocks: 7,
           slamDunks: 2,
         },
-        bismakBiyombo:{
+        "Bismak Biyombo":{
           number: 0,
           shoe: 16,
           points: 12,
@@ -80,7 +80,7 @@ const gameObject = () => {
           blocks: 15,
           slamDunks: 10,
         },
-        desagnaDiop:{
+        "Desagna Diop":{
           number: 2,
           shoe: 14,
           points: 24,
@@ -90,7 +90,7 @@ const gameObject = () => {
           blocks: 5,
           slamDunks: 5,
         },
-        benGordon:{
+        "Ben Gordon":{
           number: 8,
           shoe: 15,
           points: 33,
@@ -100,7 +100,7 @@ const gameObject = () => {
           blocks: 1,
           slamDunks: 0,
         },
-        brendanHaywood:{
+        "Brendan Haywood":{
           number: 33,
           shoe: 15,
           points: 6,
@@ -116,4 +116,3 @@ const gameObject = () => {
   return basketballGame
 }
 
-console.log(gameObject())

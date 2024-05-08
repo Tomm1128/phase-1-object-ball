@@ -128,8 +128,6 @@ const findTeam = (team) => {
   }
 }
 
-//console.log(findTeam("Brooklyn Nets"))
-
 const playerStats = (player) => {
   if (game.home.players[player] === player){
     return game.home.players[player]
@@ -138,11 +136,29 @@ const playerStats = (player) => {
   }
 }
 
-//console.log(playerStats('Ben Gordon'))
-
-const findPlayersOnTeam = (team) => {
-  return findTeam(team).players
+const getAllPlayers = () => {
+  return {
+    ...game.home.players,
+    ...game.away.players
+  }
 }
+
+const findLargestStat = (stat) => {
+  let maxStat = 0
+  let playerOfStat = "player"
+  const allPlayers = getAllPlayers()
+  
+  for (const key in allPlayers ){
+    console.log(allPlayers[key])
+    if (allPlayers[key] === stat)
+      console.log(allPlayers[key])
+  }
+}
+
+findLargestStat("shoe")
+
+
+const findPlayersOnTeam = (team) => findTeam(team).players
 
 //console.log(findPlayersOnTeam("Brooklyn Nets"))
 
@@ -150,19 +166,13 @@ const findPlayersOnTeam = (team) => {
 
 const numPointsScored = (player) => playerStats(player).points
 
-//console.log(numPointsScored('Ben Gordon'));
-
 const showSize = (player) => playerStats(player).shoe
-
-//console.log(showSize('Ben Gordon'))
 
 const teamColors = (team) => findTeam(team).colors
 
-//console.log(teamColors("Brooklyn Nets"))
+const teamNames = () => [game.home.teamName, game.away.teamName]
 
-const teamNames = () => [gameObject().home.teamName, gameObject().away.teamName]
-
-//console.log(teamNames())
+console.log
 
 const playerNumbers = (team) => {
   const jerseyNumbers = []
@@ -173,8 +183,7 @@ const playerNumbers = (team) => {
   return jerseyNumbers
 }
 
-console.log(playerNumbers("Brooklyn Nets"))
-
+const bigShoeRebounds = () => {}
 
 
 //old solutions 

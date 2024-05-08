@@ -116,3 +116,16 @@ const gameObject = () => {
   return basketballGame
 }
 
+const numPointsScored = (player) => {
+  const game = gameObject()
+
+  if (game.home.players[player] === player){
+    return game.home.players[player].points
+  } else {
+    return game.away.players[player].points
+  }
+}
+
+numPointsScored('Ben Gordon');
+
+

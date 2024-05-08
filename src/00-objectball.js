@@ -139,3 +139,14 @@ const showSize = (player) => {
 }
 
 console.log(showSize('Ben Gordon'))
+
+const teamColors = (team) => {
+  const game = gameObject()
+  if (game.home.teamName === team){
+    return game.home.colors
+  } else {
+    return game.away.colors
+  }
+}
+
+console.log(teamColors("Brooklyn Net"))

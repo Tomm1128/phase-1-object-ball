@@ -127,7 +127,7 @@ const findTeam = (team) => {
   }
 }
 
-console.log(findTeam("Brooklyn Nets"))
+//console.log(findTeam("Brooklyn Nets"))
 
 const playerStats = (player) => {
   
@@ -139,53 +139,47 @@ const playerStats = (player) => {
   }
 }
 
-console.log(playerStats('Ben Gordon'))
+//console.log(playerStats('Ben Gordon'))
 
 
 //using functions above to better traverse the game object
 
-const numPointsScored = (player) => {
-  return playerStats(player).points
-  
-}
+const numPointsScored = (player) => playerStats(player).points
 
-console.log(numPointsScored('Ben Gordon'));
+//console.log(numPointsScored('Ben Gordon'));
 
-const showSize = (player) => {
-  return playerStats(player).shoe
-}
+const showSize = (player) => playerStats(player).shoe
 
-console.log(showSize('Ben Gordon'))
+//console.log(showSize('Ben Gordon'))
 
-const teamColors = (team) => {
-  return findTeam(team).colors
-}
+const teamColors = (team) => findTeam(team).colors
 
-console.log(teamColors("Brooklyn Nets"))
+//console.log(teamColors("Brooklyn Nets"))
 
 const teamNames = () => [gameObject().home.teamName, gameObject().away.teamName]
 
-  console.log(teamNames())
+//console.log(teamNames())
+
+const playerNumbers = (team) => {
+  const workingTeam = findTeam(team)
+  const jerseyNumbers = []
+  if (workingTeam.teamName === team){
+    for (const key in workingTeam.players){
+      jerseyNumbers.push(workingTeam.players[key].number)
+    } 
+  } else {
+    for (const key in workingTeam.players){
+      jerseyNumbers.push(workingTeam.players[key].number)
+    }
+  }
+  return jerseyNumbers
+}
+
+//console.log(playerNumbers("Brooklyn Nets"))
+
+
 
 //old solutions 
-
-// const playerNumbers = (team) => {
-//   const game = gameObject()
-//   const jerseyNumbers = []
-//   if (game.home.teamName === team){
-//     for (const key in game.home.players){
-//       jerseyNumbers.push(game.home.players[key].number)
-//     }
-//   } else {
-//     for (const key in game.away.players){
-//       jerseyNumbers.push(game.away.players[key].number)
-//     }
-//   }
-//   return jerseyNumbers
-// }
-
-// console.log(playerNumbers("Brooklyn Nets"))
-
 
 // const findShoeSizes = () => {
 //   const game = gameObject()

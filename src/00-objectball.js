@@ -150,3 +150,10 @@ const teamColors = (team) => {
 }
 
 console.log(teamColors("Brooklyn Net"))
+
+const teamNames = () => {
+  const game = gameObject()
+  return [game.home.teamName, game.away.teamName]
+}
+
+console.log(teamNames())

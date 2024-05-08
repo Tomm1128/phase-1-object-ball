@@ -1,4 +1,5 @@
-const gameObject = {
+const gameObject = () => {
+  const basketballGame = {
     home: {
       teamName: "Brooklyn Nets",
       colors: ["Black", "White"],
@@ -111,4 +112,8 @@ const gameObject = {
         }
       }
     }
+  }
+  return basketballGame
 }
+
+console.log(gameObject())

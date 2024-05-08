@@ -127,6 +127,20 @@ const playerStats = (player) => {
   }
 }
 
+const findTeam = (team) => {
+  const game = gameObject()
+  if (game.home.teamName === team){
+    return game.home
+  } else {
+    return game.away
+  }
+}
+
+console.log(findTeam("Brooklyn Nets"))
+
+
+//using functions above to better traverse the game object
+
 console.log(playerStats('Ben Gordon'))
 
 const numPointsScored = (player) => {
@@ -142,17 +156,11 @@ const showSize = (player) => {
 
 console.log(showSize('Ben Gordon'))
 
+const teamColors = (team) => {
+  const game = gameObject()
+}
+
 //old solutions 
-
-// const showSize = (player) => {
-//   const game = gameObject()
-
-//   if (game.home.players[player] === player){
-//     return game.home.players[player].shoe
-//   } else {
-//     return game.away.players[player].shoe
-//   }
-// }
 
 // const teamColors = (team) => {
 //   const game = gameObject()

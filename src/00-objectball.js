@@ -201,3 +201,13 @@ const winningTeam = () => {
   }
 }
 
+const playerWithLongestName = () => {
+  const allPlayers = getAllPlayers()
+  let longestName = " "
+  for (key in allPlayers){
+    if (key.length > longestName.length){
+      longestName = key
+    }
+  }
+  return longestName
+}

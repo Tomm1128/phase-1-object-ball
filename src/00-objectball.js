@@ -211,3 +211,12 @@ const playerWithLongestName = () => {
   }
   return longestName
 }
+
+const doesLongNameStealATon = () => {
+  const playerLongestName = playerWithLongestName()
+  if (getAllPlayers()[playerLongestName].steals === getAllPlayers()[bestPlayerByStat("steals")].steals){
+    return true
+  } else {
+    return false
+  }
+}

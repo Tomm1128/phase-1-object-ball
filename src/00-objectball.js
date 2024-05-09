@@ -143,7 +143,7 @@ const getAllPlayers = () => {
   }
 }
 
-const findLargestStat = (stat) => {
+const bestPlayerByStat = (stat) => {
   let maxStat = 0
   let playerOfStat = "player"
   const allPlayers = getAllPlayers()
@@ -159,6 +159,16 @@ const findLargestStat = (stat) => {
 }
 
 const findPlayersOnTeam = (team) => findTeam(team).players
+
+const teamTotalPoints = (team) => {
+  const players = findPlayersOnTeam(team)
+  let totalPoints = 0
+
+  for (const key in players ){
+    totalPoints += players[key].points
+  }
+  return totalPoints
+}
 
 //using functions above to better traverse the game object
 
@@ -179,8 +189,15 @@ const playerNumbers = (team) => {
   return jerseyNumbers
 }
 
-const bigShoeRebounds = () => `Player: ${findLargestStat("shoe")}, Rebounds: ${getAllPlayers()[findLargestStat("shoe")].rebounds}`
+const bigShoeRebounds = () => `Player: ${bestPlayerByStat("shoe")}, Rebounds: ${getAllPlayers()[bestPlayerByStat("shoe")].rebounds}`
 
-const mostPointsScored = () => `Player: ${findLargestStat("points")}, Points: ${getAllPlayers()[findLargestStat("points")].points}`
+const mostPointsScored = () => `Player: ${bestPlayerByStat("points")}, Points: ${getAllPlayers()[bestPlayerByStat("points")].points}`
 
-console.log(mostPointsScored())
+const winningTeam = () => {
+  if (teamTotalPoints(game.home.teamName) > teamTotalPoints(game.away.teamName)) {
+    return game.home.teamName
+  } else {
+    return game.home.teamName
+  }
+}
+

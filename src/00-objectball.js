@@ -118,8 +118,6 @@ const gameObject = () => {
 
 const game = gameObject()
 
-// trying to break the object up into individual functions to better traverse the data
-
 const findTeam = (team) => {
   if (game.home.teamName === team){
     return game.home
@@ -169,8 +167,6 @@ const teamTotalPoints = (team) => {
   }
   return totalPoints
 }
-
-//using functions above to better traverse the game object
 
 const numPointsScored = (player) => playerStats(player).points
 

@@ -147,16 +147,14 @@ const findLargestStat = (stat) => {
   let maxStat = 0
   let playerOfStat = "player"
   const allPlayers = getAllPlayers()
-  
+
   for (const key in allPlayers ){
-    console.log(allPlayers[key])
-    if (allPlayers[key] === stat)
-      console.log(allPlayers[key])
+    if (allPlayers[key][stat] > maxStat){
+      maxStat = allPlayers[key][stat]
+      playerOfStat = key
+    }
   }
 }
-
-findLargestStat("shoe")
-
 
 const findPlayersOnTeam = (team) => findTeam(team).players
 

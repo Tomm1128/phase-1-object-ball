@@ -154,11 +154,11 @@ const findLargestStat = (stat) => {
       playerOfStat = key
     }
   }
+
+  return playerOfStat
 }
 
 const findPlayersOnTeam = (team) => findTeam(team).players
-
-//console.log(findPlayersOnTeam("Brooklyn Nets"))
 
 //using functions above to better traverse the game object
 
@@ -170,8 +170,6 @@ const teamColors = (team) => findTeam(team).colors
 
 const teamNames = () => [game.home.teamName, game.away.teamName]
 
-console.log
-
 const playerNumbers = (team) => {
   const jerseyNumbers = []
   const teamPlayers = findPlayersOnTeam(team)
@@ -181,7 +179,8 @@ const playerNumbers = (team) => {
   return jerseyNumbers
 }
 
-const bigShoeRebounds = () => {}
+const bigShoeRebounds = () => `Player: ${findLargestStat("shoe")}, Rebounds: ${getAllPlayers()[findLargestStat("shoe")].rebounds}`
+
 
 
 //old solutions 

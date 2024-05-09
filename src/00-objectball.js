@@ -181,17 +181,6 @@ const playerNumbers = (team) => {
 
 const bigShoeRebounds = () => `Player: ${findLargestStat("shoe")}, Rebounds: ${getAllPlayers()[findLargestStat("shoe")].rebounds}`
 
+const mostPointsScored = () => `Player: ${findLargestStat("points")}, Points: ${getAllPlayers()[findLargestStat("points")].points}`
 
-
-//old solutions 
-
-// const findShoeSizes = () => {
-//   const game = gameObject()
-
-// }
-
-// const bigShoeRebounds = () => {
-//   const game = gameObject()
-//   let shoeCheck = 0
-  
-// }
+console.log(mostPointsScored())
